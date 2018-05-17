@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="renderer" content="webkit">
+    <title>排行榜</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_291365_3dnccteau5cow29.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/weui/1.1.2/style/weui.min.css"/>
+    <link href="http://cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css" rel="stylesheet">
+    <link href="statics/js/libs/mescroll/mescroll.min.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/layer/3.0.1/mobile/layer.min.js"></script>
+    <script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="statics/css/mobile_base.css" />
+	<link rel="stylesheet" type="text/css" href="statics/css/common.css" />
+	<link rel="stylesheet" href="http://test.m.csdamedia.cn/statics/css/lib/loader.css"/>
+	<script src="statics/js/mobile_base.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			(function(win,doc){
+				function change(){
+					doc.documentElement.style.fontSize=doc.documentElement.clientWidth/375*20+'px';
+				}
+				change();
+				win.addEventListener('resize',change,false);
+			})(window,document);
+		});
+	</script>
+	<style>
+		body{background-color:#f8f8f8}.indexlist img{height:118px;width:100%}.head-top .pannel-img{height:118px;overflow:hidden}.head-top .pannel-img img{height:118px;width:100%}.signup_type{margin:5px;font-size:14px}.foot-btn{color:#FFF;position:fixed;bottom:0;left:0;width:100%;line-height:50px;font-size:14px;text-align:center}.indexlist{background-color:#fff;margin-bottom:15px}.pdb5{padding-bottom:5px}.mgl5{margin-left:5px}.pd2{pading:2px!important}.detail-content h5{font-size:14px;height:16px;line-height:16px;margin:15px 0;vertical-align:top}.detail-content h5:before{content:'';display:inline-block;width:6px;height:16px;margin-right:6px;background-color:#1aad19;vertical-align:middle}.spinner{width:140px;height:70px;text-align:center;font-size:13px;position:absolute;top:50%;left:50%;margin:-35px 0 0 -70px}.sk-cube-grid{width:40px;height:40px;margin:40px auto}.sk-cube-grid .sk-cube{width:33.33%;height:33.33%;background-color:#4DB3FF;float:left;-webkit-animation:sk-cubeGridScaleDelay 1.3s infinite ease-in-out;animation:sk-cubeGridScaleDelay 1.3s infinite ease-in-out}.sk-cube-grid .sk-cube1{-webkit-animation-delay:.2s;animation-delay:.2s}.sk-cube-grid .sk-cube2{-webkit-animation-delay:.3s;animation-delay:.3s}.sk-cube-grid .sk-cube3{-webkit-animation-delay:.4s;animation-delay:.4s}.sk-cube-grid .sk-cube4{-webkit-animation-delay:.1s;animation-delay:.1s}.sk-cube-grid .sk-cube5{-webkit-animation-delay:.2s;animation-delay:.2s}.sk-cube-grid .sk-cube6{-webkit-animation-delay:.3s;animation-delay:.3s}.sk-cube-grid .sk-cube7{-webkit-animation-delay:0s;animation-delay:0s}.sk-cube-grid .sk-cube8{-webkit-animation-delay:.1s;animation-delay:.1s}.sk-cube-grid .sk-cube9{-webkit-animation-delay:.2s;animation-delay:.2s}@-webkit-keyframes sk-cubeGridScaleDelay{0%,100%,70%{-webkit-transform:scale3D(1,1,1);transform:scale3D(1,1,1)}35%{-webkit-transform:scale3D(0,0,1);transform:scale3D(0,0,1)}}@keyframes sk-cubeGridScaleDelay{0%,100%,70%{-webkit-transform:scale3D(1,1,1);transform:scale3D(1,1,1)}35%{-webkit-transform:scale3D(0,0,1);transform:scale3D(0,0,1)}}[v-cloak]{display:none!important}.col-theme{color:#FA5858}
+		img{vertical-align:top;width:100%}.bg{background-color:#fff}header{display:flex;width:100%;height:44px;z-index:10;background:rgba(255,255,255,0.99);color:#999;border-bottom:.5px solid #ddd;box-sizing:border-box}.headTitle{width:14.35rem;height:44px;line-height:48px;color:#4a4a4a;flex:1}.icon-back{width:2.2rem;height:44px}.sicon-left{display:inline-block;padding-right:14px;width:26px;height:100%;line-height:50px;text-align:center}.banner{position:relative;width:100%;height:7rem}.banner img{height:100%}.banner-txt{padding-top:2rem;position:absolute;left:0;top:0;width:100%;height:100%;text-align:center;color:#fff;box-sizing:border-box}.adress{height:1.5rem;line-height:1.3rem;font-size:.9rem}.rank-title{height:1.9rem;line-height:1.9rem;font-size:1.3rem}.last-updata-time{padding-left:1rem;width:100%;height:2.2rem;line-height:2.2rem;box-sizing:border-box;color:#999;font-size:.65rem;background:#f0f2f5}.rank-wrapper{background:#fff}.rank-wrapper .item{padding:0 1rem 0 0.5rem;display:flex;align-items:center;justify-content:space-between;width:100%;height:3.5rem;box-sizing:border-box;font-size:.8rem;background:#fff}.rank-num{width:2rem;text-align:center;color:#333}.rank-list-info{display:flex;justify-content:space-between;align-items:center;width:15.5rem;height:100%;box-sizing:border-box;border-bottom:.5px solid #f3f3f3;flex:1}.rank-user-photo{margin-right:1rem;position:relative;width:2.45rem;height:2.45rem;text-align:center;border-radius:50%}.rank-user-photo img{width:100%;height:100%;border-radius:50%}.rank-user-photo .filter{position:absolute;right:-0.15rem;top:-0.6rem;width:1.5rem;height:1.5rem}.rank-user-name{width:7.5rem;color:#666;flex:1}.rank-score{width:4.5rem;text-align:right;font-size:1rem;color:#999}.rank-wrapper .item:nth-child(-n+3) .rank-num{font-size:1.3rem;font-style:oblique;color:#fa5858}.rank-wrapper .item:nth-child(-n+3) .rank-user-name{color:#fa5858}.rank-wrapper .item:nth-child(-n+3) .rank-score{color:#fa5858}.rank-wrapper .item:first-child .rank-user-photo{border:2px solid rgba(245,207,18,0.50)}.rank-wrapper .item:nth-child(2) .rank-user-photo{border:2px solid #d1e0fb}.rank-wrapper .item:nth-child(3) .rank-user-photo{border:2px solid rgba(215,146,38,0.50)}.rank-wrapper .item:nth-child(1) .filter{background:url(statics/images/rank/rank_num1.png) no-repeat right top;background-size:100%}.rank-wrapper .item:nth-child(2) .filter{background:url(statics/images/rank/rank_num2.png) no-repeat right top;background-size:100%}.rank-wrapper .item:nth-child(3) .filter{background:url(statics/images/rank/rank_num3.png) no-repeat right top;background-size:100%}.change-rank{position:fixed;left:50%;bottom:1rem;transform:translateX(-50%);display:flex;align-items:center;width:10.58rem;height:2rem;border-radius:1rem;overflow:hidden;box-shadow:0 1px 2px 0 rgba(0,0,0,0.14);background:#f8f8f8;color:#888;font-size:.7rem;text-align:center}.change-rank div{flex-grow:1;width:33%;height:100%;line-height:2rem}.change-rank div.active{background:#fff;color:#f00}[v-cloak]{display:none!important}.fade-enter-active,.fade-leave-active{transition:opacity .5s}.fade-enter,.fade-leave-to{opacity:0}
+		/*mescroll滚动的区域*/
+			.mescroll{
+				position: fixed;
+				top: 10rem;
+				bottom: 0;
+				height: auto;
+			}
+
+	</style>
+</head>
+<body ontouchstart class="bg"> 
+	<div id="app" v-cloak>
+		<run_loading :show="run_loading"></run_loading>
+		<!--<div>-->
+		<!--<header>
+			<div class="icon-back">
+				<span class="csdafont sicon-left"></span>
+			</div>
+			<div class="txt-c txtElip headTitle">排行榜</div>
+			<div class="icon-back">
+			</div>
+		</header>-->
+		<div class="con">
+			<div class="banner">
+				<img :src="info.cover?info.cover:banner_default">
+				<div class="banner-txt" v-if="!info.cover">
+					<div class="adress" v-text="info.title"></div>
+					<div class="rank-title">赛事排行榜</div>
+				</div>				
+			</div>
+			<div class="last-updata-time" v-text="info.tips"></div>
+			<div class="scroll-wrapper mescroll" id="mescroll">
+				<ul class="rank-wrapper" v-on:touchstart = "hideFixTool()" v-on:touchend = "showFixTool()" v-cloak>
+					<li class="item" v-for="(item, index) in ranklist">
+						<div class="rank-num" v-text="item.order"></div>
+						<div class="rank-list-info">
+							<div class="rank-user-photo">
+								<img :src="item.headface" alt="">
+								<div class="filter" v-if="index < 3"></div>				
+							</div>
+							<div class="rank-user-name txtElip" v-text="item.name"></div>
+							<div class="rank-score" v-text="info.show_type?item.score:item.total_time"></div>
+						</div>			
+					</li>
+				</ul>
+			</div>
+			<transition name="fade">
+				<div class="change-rank" v-show="fixToolBtnsShow">
+					<div 					
+						v-for="(item, index) in fixToolBtns"
+						:class="item.selected?'active':''"
+						v-on:click ="change_tab(item.sort,index)" 					 
+						v-text="item.tankBtnTxt" 
+						:id="'item_' + item.sort">
+					</div>
+				</div>
+			</transition>
+			<div id="rank_wrapper"></div>
+		</div>
+	</div>
+	<script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+	<script src="statics/js/libs/mescroll/mescroll.min.js"></script>
+	<script src="./statics/js/libs/fastclick.js"></script> 
+	<script type="text/javascript">
+		$(function(){
+			FastClick.attach(document.body);
+		})
+		var key = 'ygq5wp0L';
+		var api_url = 'http://test.m.csdamedia.cn/m/rank/get_rank_data?key='+key+'&format=jsonp';
+		
+		
+		Vue.component('run_loading',{
+         	template: '<div class="spinner" style="text-align: center;top: 50%;left: 50%;position: absolute;z-index: 199999;"><div class="loader-inner ball-pulse" v-if="show"><div></div><div></div><div></div></div></div>',
+	        props:{
+	            show: Boolean,
+	        }      
+	    });
+	    
+		var app = new Vue({
+		  	el: '#app',
+		  	data: {
+		  		info:{},
+		  		ranklist: [],
+		  		banner_default:"statics/images/rank/banner_default.png",
+		  		run_loading:false,
+		  		sort: "",
+		  		page: 0,
+		  		sort_index: 2,
+		  		fixToolBtnsShow: true,
+		  		fixToolBtns:[{
+		  			"selected":true,
+		  			"sort": "d",
+		  			"tankBtnTxt":"日排行"
+		  		},{
+		  			"selected":false,
+		  			"sort": "m",
+		  			"tankBtnTxt":"月排行"
+		  		},{
+		  			"selected":false,
+		  			"sort": "",
+		  			"tankBtnTxt":"总排行"
+		  		}],
+		  		mescroll: null
+		  	},
+		  	mounted: function(){
+		  		var that = this;
+		  		that.run_loading = true;
+		  		that.change_tab(that.sort,that.sort_index, 1);
+		  		
+		  		that.mescroll = new MeScroll("mescroll", {
+		  			down: {
+		  				use:false
+		  			},
+					up: {
+						callback: that.upCallback, 
+						isBounce: false, 						
+						empty:{ //配置列表无任何数据的提示
+							warpId:"rank_wrapper", 
+						  	tip : "暂无数据" , 
+						}
+					}
+				});
+		  	},
+		  	methods:{
+		  		//上拉回调 page = {num:1, size:10}; num:当前页 ,默认从1开始; size:每页数据条数,默认10
+				upCallback: function(page) {
+					//联网加载数据
+					var that = this;
+					that.get_data_list(that.sort, that.page.start, function(curPageData) {
+						that.run_loading = false;
+						if(page.num == 1){
+							that.ranklist = [];
+							that.info = curPageData.data.info;
+						}
+						
+						that.page = curPageData.data.page;
+		                if(curPageData.result!=1){
+					  		$.alert(curPageData.error_msg);
+					  		return;
+					  	}
+			  			that.ranklist = that.ranklist.concat(curPageData.data.ranklist);
+			  			if(curPageData.data.ranklist.length ==0) {
+			  				that.mescroll.endSuccess(curPageData.data.ranklist.length);
+			  			} else {
+			  				that.mescroll.endSuccess(10);
+			  			}
+					
+					}, function() {
+						//联网失败的回调,隐藏下拉刷新和上拉加载的状态;
+						self.mescroll.endErr();
+					});
+				},
+				change_tab: function (sort,sort_index,no_reset) {
+		  			var that = this;
+		  			
+		  			that.sort = sort;
+		  			that.sort_index = sort_index;
+		  			that.page.start = 0;
+					for(var i = 0; i<that.fixToolBtns.length; i++){
+				  		that.fixToolBtns[i].selected = false;
+				  	}
+				  	that.fixToolBtns[that.sort_index].selected = true;
+				  	if(no_reset != 1) that.mescroll.resetUpScroll(); 
+		  		},
+		  		hideFixTool: function(){
+		  			var that = this;
+		  			that.fixToolBtnsShow = false;
+		  		},
+		  		showFixTool: function(){
+		  			var that = this;
+		  			that.fixToolBtnsShow = true;
+		  		},
+		  		get_data_list: function (sort,start,successCallback,errorCallback) {
+		  			$.ajax({ 
+			            url: api_url+'&sort='+sort+'&start='+start,      
+			            type:"get",  
+			            cache:false,  
+			            dataType:"jsonp", 
+			            success:function(data){  
+						  	successCallback&&successCallback(data);				  	
+			            },  
+			            error:function(){  
+			                $.alert("发生异常");  
+			            }  
+			       });
+				}
+		  	}
+		})
+	</script>
+</body>
+</html>

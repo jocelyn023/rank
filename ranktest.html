@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="renderer" content="webkit">
+    <title>排行榜</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_291365_3dnccteau5cow29.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/weui/1.1.2/style/weui.min.css"/>
+    <link href="http://cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css" rel="stylesheet">
+    <link href="statics/js/libs/mescroll/mescroll.min.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/layer/3.0.1/mobile/layer.min.js"></script>
+    <script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="statics/css/mobile_base.css" />
+	<link rel="stylesheet" type="text/css" href="statics/css/common.css" />
+	<script src="statics/js/mobile_base.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			(function(win,doc){
+				function change(){
+					doc.documentElement.style.fontSize=doc.documentElement.clientWidth/375*20+'px';
+				}
+				change();
+				win.addEventListener('resize',change,false);
+			})(window,document);
+		});
+	</script>
+	<style>
+		img{
+			vertical-align: top;
+			width: 100%;
+		}
+		.bg{background-color:#fff}
+		header{
+			display: flex;
+			width:100%;
+			height:44px;
+			z-index:10;
+			background:rgba(255,255,255,0.99);
+			color:#999;
+			border-bottom:.5px solid #ddd;
+			box-sizing:border-box
+		}
+		.headTitle{width:14.35rem;height:44px;line-height:48px;color:#4a4a4a;flex:1}
+		.icon-back{width:2.2rem;height:44px}
+		.sicon-left{display:inline-block;padding-right:14px;width:26px;height:100%;line-height:50px;text-align:center}
+		.banner{
+			position: relative;
+			width: 100%;
+			height: 7rem;
+		}
+		.banner img{
+			height: 100%;
+		}
+		.banner-txt{
+			padding-top: 2rem;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			color: #fff;
+			box-sizing: border-box;
+		}
+		.adress{
+			height: 1.5rem;
+			line-height: 1.3rem;
+			font-size: 0.9rem
+		}
+		.rank-title{
+			height: 1.9rem;
+			line-height: 1.9rem;
+			font-size: 1.3rem
+		}
+		.last-updata-time{
+			padding-left: 1rem;
+			width: 100%;
+			height: 2.2rem;
+			line-height: 2.2rem;
+			box-sizing: border-box;
+			color:#999999;
+			font-size: 0.65rem;
+			background: #F0F2F5;
+		}
+		.rank-wrapper{
+			background: #fff;
+		}
+		.rank-wrapper .item{
+			padding: 0 1rem;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			height: 3.5rem;
+			box-sizing: border-box;			
+			font-size: 0.8rem;
+			background: #fff;
+		}
+		.rank-num{
+			width: 1rem;
+			text-align: center;
+			color: #333;
+		}
+		.rank-list-info{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 15.5rem;
+			height: 100%;
+			box-sizing: border-box;
+			border-bottom: .5px solid #F3F3F3;
+			flex: 1;
+		}
+		.rank-user-photo{
+			margin-right: 1rem;
+			position: relative;
+			width: 2.45rem;
+			height: 2.45rem;
+			text-align: center;
+			border-radius: 50%;
+		}
+		.rank-user-photo img{
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+		}
+		.rank-user-photo .filter{
+			position: absolute;
+			right: -0.15rem;
+			top: -0.6rem;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+		.rank-user-name{
+			width: 7.5rem;
+			color: #666;
+			flex: 1;
+		}
+		.rank-score{
+			width: 4.5rem;
+			text-align: right;
+			font-size: 1rem;
+			color: #999;
+		}	
+		.rank-wrapper .item:nth-child(-n+3) .rank-num{
+			font-size: 1.3rem;
+			font-style:oblique;
+			color: #FA5858;
+		}
+		.rank-wrapper .item:nth-child(-n+3) .rank-user-name{
+		    color: #FA5858;
+		}
+		.rank-wrapper .item:nth-child(-n+3) .rank-score{
+		    color: #FA5858;
+		}
+		.rank-wrapper .item:first-child .rank-user-photo{
+			border: 2px solid rgba(245,207,18,0.50);
+		}
+		.rank-wrapper .item:nth-child(2) .rank-user-photo{
+			border: 2px solid #D1E0FB;
+		}
+		.rank-wrapper .item:nth-child(3) .rank-user-photo{
+			border: 2px solid rgba(215,146,38,0.50);
+		}
+		.rank-wrapper .item:nth-child(1)  .filter{
+			background: url(statics/images/rank/rank_num1.png) no-repeat right top;
+			background-size: 100%;
+		}
+		.rank-wrapper .item:nth-child(2) .filter{
+			background: url(statics/images/rank/rank_num2.png) no-repeat right top;
+			background-size: 100%;
+		}
+		.rank-wrapper .item:nth-child(3) .filter{
+			background: url(statics/images/rank/rank_num3.png) no-repeat right top;
+			background-size: 100%;
+		}
+		.change-rank{
+			position: fixed;
+			left: 50%;
+			bottom: 1rem;
+			transform: translateX(-50%);
+			display: flex;
+			align-items: center;
+			width: 10.58rem;
+			height: 2rem;
+			border-radius: 1rem;
+			overflow: hidden;
+			box-shadow: 0 1px 2px 0 rgba(0,0,0,0.14);
+			background: #f8f8f8;
+			color: #888;
+			font-size: 0.7rem;
+			text-align: center;
+		}
+		.change-rank div{
+			flex-grow: 1;
+			width: 33%;
+			height: 100%;
+			line-height: 2rem;
+		}
+		.change-rank div.active{
+			background: #fff;
+			color: #f00;
+		}
+		[v-cloak]{
+			/*避免页面加载数据出现undefind*/
+	        display:none !important;
+        }
+        .fade-enter-active, .fade-leave-active {
+		  	transition: opacity .5s;
+		}
+		.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+		  	opacity: 0;
+		}
+	</style>
+</head>
+<body ontouchstart class="bg"> 
+	<div id="app" v-cloak>
+		<div @scroll="scrollFn()">
+		<header>
+			<div class="icon-back">
+				<span class="csdafont sicon-left"></span>
+			</div>
+			<div class="txt-c txtElip headTitle">排行榜
+				<!--<p class="">排行榜</p>-->
+			</div>
+			<div class="icon-back">
+			</div>
+		</header>
+		<div class="con">
+			<div class="banner">
+				<img :src="info.cover?info.cover:banner_default">
+				<div class="banner-txt" v-if="!info.cover">
+					<div class="adress" v-text="info.title"></div>
+					<div class="rank-title">赛事排行榜</div>
+				</div>				
+			</div>
+			<div class="last-updata-time" v-text="info.tips"></div>
+			<div class="scroll-wrapper mescroll" id="mescroll">
+				<ul class="rank-wrapper" v-on:touchstart = "hideFixTool()" v-on:touchend = "showFixTool()" id="rankWrapper">
+					<li class="item" v-for="(item, index) in ranklist">
+						<div class="rank-num" v-text="item.order">1</div>
+						<div class="rank-list-info">
+							<div class="rank-user-photo">
+								<img :src="item.headface" alt="">
+								<div class="filter" v-if="index < 3"></div>				
+							</div>
+							<div class="rank-user-name txtElip" v-text="item.name"></div>
+							<div class="rank-score" v-text="info.show_type?item.score:item.total_time"></div>
+						</div>
+						
+					</li>
+				</ul>
+			</div>
+			<transition name="fade">
+				<div class="change-rank" v-show="fixToolBtnsShow">
+					<div 					
+						v-for="(item, index) in fixToolBtns"
+						:class="item.selected?'active':''"
+						v-on:click ="initFn(index)" 					 
+						v-text="item.tankBtnTxt">
+					</div>
+				</div>
+			</transition>
+		</div>
+		</div>
+	</div>
+	<script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"></script>
+	<script src="statics/js/libs/mescroll/mescroll.min.js"></script> 
+	<script src="./statics/js/libs/fastclick.js"></script> 
+	<script type="text/javascript">
+		$(function(){
+			FastClick.attach(document.body);			
+		})		
+//		var url = 'http://test.m.csdamedia.cn/m/rank/get_rank_data?key=ygq5wp0L&format=jsonp';
+		var url = 'http://test.m.csdamedia.cn/m/rank/get_rank_data';
+		Vue.component('run_loading',{
+         	template: '<div class="spinner" style="text-align: center;top: 50%;left: 50%;position: absolute;z-index: 199999;"><div class="loader-inner ball-pulse" v-if="show"><div></div><div></div><div></div></div></div>',
+	        props:{
+	            show: Boolean,
+	        }      
+	    });
+	    
+		var app = new Vue({
+		  	el: '#app',
+		  	data: {
+		  		info :{},
+		  		ranklist: [],
+		  		getRankListData: [],
+		  		banner_default:"statics/images/rank/banner_default.png",
+		  		run_loading:false,
+		  		fixToolBtnsShow: true,
+		  		fixToolBtns:[{
+		  			"selected":true,
+		  			"tankBtnTxt":"日排行"
+		  		},{
+		  			"selected":false,
+		  			"tankBtnTxt":"月排行"
+		  		},{
+		  			"selected":false,
+		  			"tankBtnTxt":"总排行"
+		  		}],
+		  		params:{
+		  			"format": "jsonp",
+		  			"key":"ygq5wp0L",
+		  			"sort": "d",		  			
+		  			"start":"",
+		  			"rank": ""		  			
+		  		},
+		  		hasNextPage: true,
+		  		mescroll: null
+		  	},
+		  	mounted: function(){
+		  		var that = this;
+		  		that.run_loading = true;
+		  		that.initFn(0);
+//		  		that.getRankFn(0);
+		  				  		
+		  		that.mescroll = new MeScroll("mescroll", { //请至少在vue的mounted生命周期初始化mescroll,以确保您配置的id能够被找到
+					up: {
+						callback: that.upCallback, //上拉回调
+						//以下参数可删除,不配置
+						isBounce: false, //此处禁止ios回弹,解析(务必认真阅读,特别是最后一点): http://www.mescroll.com/qa.html#q10
+						//page:{size:8}, //可配置每页8条数据,默认10
+						
+//						empty:{ //配置列表无任何数据的提示
+//							warpId:"rankWrapper",
+////							icon : "../images/mescroll-empty.png" , 
+//						  	tip : "亲,暂无相关数据哦~" , 
+////						  	btntext : "去逛逛 >" , 
+////						  	btnClick : function() {
+////						  		alert("点击了去逛逛按钮");
+////						  	} 
+//						}
+					}
+				});
+		  	},
+		  	methods:{
+				initFn: function(index){
+					var that = this;
+					
+					switch(index){
+						case 0:
+							that.params = {
+								"format": "jsonp",
+								"key":"ygq5wp0L",
+								"sort": "d",					  			
+					  			"start":"",
+					  			"rank": ""					  			
+							}
+							break;
+						case 1:
+							that.params = {
+								"format": "jsonp",
+								"key":"ygq5wp0L",
+								"sort": "m",					  			
+					  			"start":"",
+					  			"rank": ""					  			
+							}
+							break;
+						default:
+							that.params = {
+								"format": "jsonp",
+								"key":"ygq5wp0L",
+								"sort": "w",					  			
+					  			"start":"",
+					  			"rank": ""					  			
+							}
+							break;
+					}
+		  			
+		  			//请求数据
+		  			$.ajax({ 
+			            url: url,    
+			            type:"get",  
+			            cache:false,
+			            data: that.params,
+			            dataType:"jsonp",
+			            success:function(data){  
+			                if(data.result!=1){
+						  		$.alert(data.error_msg);
+						  		return;
+						  	}		                
+						  	that.info = data.data.info;
+						  	that.ranklist = data.data.ranklist;
+						  	that.params.start = data.data.page.start;
+						  	that.params.rank = data.data.page.rank;
+			            },  
+			            error:function(){
+			                alert("发生异常");  
+			            }  
+			       	});
+			       	
+			       	for(var i = 0; i<that.fixToolBtns.length; i++){
+						that.fixToolBtns[i].selected = false;
+					}
+			       	
+					that.fixToolBtns[index].selected = true;
+				},
+		  		//上拉回调 page = {num:1, size:10}; num:当前页 ,默认从1开始; size:每页数据条数,默认10
+				upCallback: function(page) {
+					//联网加载数据
+					var that = this;
+					//请求数据
+					$.ajax({
+			            url: url,      
+			            type:"get",  
+			            cache:false,
+			            data: that.params,
+			            dataType:"jsonp",
+			            success:function(data){  
+			                if(data.result!=1){
+						  		$.alert(data.error_msg);
+						  		return;
+						  	}
+			                if(data.data.ranklist.length){
+			                	that.hasNextPage = true;
+			                	that.getRankListData = data.data.ranklist;
+							  	that.ranklist.concat(that.getRankListData);
+							  	that.params.start = data.data.page.start;
+							  	that.params.rank = data.data.page.rank;
+							  	that.mescroll.endSuccess(that.getRankListData.length, that.hasNextPage);
+			                }else{
+			                	that.hasNextPage = false;
+			                	console.log("到底了~");
+			                	that.mescroll.endErr();
+			                }
+						  	
+			            },  
+			            error:function(){
+			                alert("发生异常");  
+			            }  
+			       	});
+				},
+		  		hideFixTool: function(){
+		  			var that = this;
+		  			console.log("start");
+		  			that.fixToolBtnsShow = false;
+		  		},
+		  		showFixTool: function(){
+		  			var that = this;
+		  			console.log("end");
+		  			that.fixToolBtnsShow = true;
+		  		}
+		  	}
+		  	
+		})
+	</script>
+</body>
+</html>

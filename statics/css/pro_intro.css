@@ -1,0 +1,163 @@
+/*清浮动*/
+.clearfloat:after{ display:block; content:""; clear:both;}
+.clearfloat{ zoom:1;}/* 清浮动的兼容性写法*/
+body{ min-width: 320px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "Microsoft YaHei"; }
+.pc_nav_bar li .font-white{ color: #fff; }
+.pc_nav_bar li .font-888{ color: #888; }
+.mobi_nav li .font-white{ color: #fff; }
+.mobi_nav li .font-888{ color: #888; }
+.mobi_nav li .font-green{ color: #1aad19; }
+.font-green{ color: #1aad19; }
+a.android:link,a.ios:link { border: 1px solid #aaa;}
+a.android:visited,a.ios:visited { border: 1px solid #aaa;}
+
+header{     
+	position: fixed;
+    top: 0;
+    z-index: 103;
+    width: 100%;
+    min-height: 50px;
+    opacity: .97;
+    background-color: rgba(255,255,255,.97);
+    -webkit-transition: all .35s ease-in-out;
+    -o-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+       
+}
+.headerShadow{
+	box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, .2);
+}
+header.transparent {
+	color: #fff;
+    border-bottom: transparent;
+    background: -moz-linear-gradient(top,rgba(0,0,0,.4),rgba(0,0,0,0));
+    background: -webkit-gradient(linear,top,bottom,from(rgba(0,0,0,.4)),to(rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(top,rgba(0,0,0,.4),rgba(0,0,0,0));
+    background: -o-linear-gradient(top,rgba(0,0,0,.4),rgba(0,0,0,0));
+    background: -ms-linear-gradient(top,rgba(0,0,0,.4),rgba(0,0,0,0));
+}
+
+/* pc 头部固定定位*/
+.mslogin,.mobi_header,.pro_info,.mLogo{ display: none; }
+.slogin{ display: block; }
+.logo{ display: none; position: absolute; left: 38px; top: 10px; width: 147px; height: 54px; background: url(../../images/app_pro_intro/logo.png) no-repeat center; background-size: 100%;}
+.pc_nav{ position: absolute; top: 0; left: 0; width: 100%; height: 100%; min-width: 520px; }
+.pc_nav_bar{ height: 100%; padding-right: 30px;}
+.pc_nav_bar li{ margin-left: 3em; text-align: center; }
+.pc_nav_bar li a{ display:inline-block;*display:inline;*zoom:1; padding:15px 2px 2px; font-size: 16px; color: #fff; }
+.pc_nav_bar li .active{ border-bottom: 2px solid #2dbf23; color: #2dbf23; }
+.pc_nav_bar li .active1{ border-bottom: 2px solid #fff; }
+.pc_fix_logo{ padding-top: 5px; padding-left: 15px; width: 90px; height: 44px; }
+.pc_fix_logo a{ display:inline-block;*display:inline;*zoom:1; width: 100%; height: 100%; }
+.pc_fix_logo .pclogo{ display: none; background: url(../images/logo.png) no-repeat center; background-size: 100%; }
+.pc_fix_logo .pclogo-white{ background: url(../images/logo-white.png) no-repeat center; background-size: 100%; }
+/* banner开始*/
+.banner{ overflow:hidden; width:100%; text-align: center; }
+.banner .banner_img{ overflow:hidden; width:100%; max-width: 100%;}
+.banner>.banner_img:not(:first-child){ display:none; }
+.slogin{ position: absolute; top: 220px; left: 55%; margin-left: -388px; width: 776px; height: 185px; font-weight: 300;}
+.sloginFont{ margin-bottom: 40px; color: #fff; width: 100%; height: 115px; text-align: center; line-height: 115px; font-size: 55px; text-shadow: 0 0 10px rgba(0,0,0,.4); }
+.to_download{ width: 100%; height: 70px; text-align: center; }
+.to_download a{ display:inline-block; *display:inline; *zoom:1; width: 222px; height: 66px; line-height: 66px; text-align: center; border: 2px solid rgba(255,255,255,.5); border-radius: 5px; font-size: 24px; font-weight: 300;}
+.to_download a:hover{ background: rgba(255,255,255,.2); }
+/*pc content 开始*/
+/*swiper开始*/
+.swiper-container{ width: 100%; background: #fff;}
+.pc_swiper-pagination span{ width: 15px; height: 15px; background: #fff; border: 1px solid #ccc; filter:alpha(opacity=100); -moz-opacity:1; -khtml-opacity:1;  opacity: 1; }
+.pc_swiper-pagination .swiper-pagination-bullet-active{ background: #ccc; }
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{ margin: 0 10px 90px; }
+.swiper-slide{ position: relative; margin-bottom: 65px;}
+.swiper-slide img{ width: 100%; }
+.swiper_registration,.swiper_sport_record,.swiper_information,.swiper_sport_shop{ position: relative; left:50%; margin-top: 40px; margin-left:-612px; padding-top: 72px; width: 1224px; height: 656px; }
+.swiper_registration:not(:first-child){ display:none; }
+.registration1,.registration2,.information1,.information2,.information3{ position: absolute; left: 0; top: 0; }
+.sport_record1,.sport_record2{ position: absolute; right: 57px; top: 0; }
+.sport_shop1,.sport_shop2{ position: absolute; right: 7px; top: 0; }
+.registrationFont{ position: absolute; left: 662px; top: 248px; }
+.sport_recordFont,.sport_shopFont{ position: absolute; left: 120px; top: 278px; }
+.informationFont{ position: absolute; left: 638px; top: 258px; }
+/*pc下载*/
+.download{ padding-top: 110px; width: 100%; height: 304px;  background-color: #3a3a3a;}
+.download_con{ margin: auto; padding-left: 60px; width: 600px; height: 230px; min-width: 240px;}
+.quickMark{ width: 186px; height: 186px; margin-bottom: 14px;}
+.quickMark img{ width: 100%; height: 100%; }
+.downloadFont{ width: 100%; height: 30px; line-height: 10px; text-align: center; font-size: 18px; color: #aaa; font-weight: 300;}
+.other_down{ width: 260px; height: 100%; }
+.android,.ios{ display:inline-block;*display:inline;*zoom:1; width: 200px; height: 65px; line-height: 65px; font-size: 18px; border: 1px solid #fff; border-radius: 4px; }
+.android:hover,.ios:hover{ background-color: rgba(255,255,255,.2); }
+.android .androidFont,.ios .iosFont{ width: 120px; height: 65px; text-align: left; color: #fff; font-weight: 300; }
+.android{ margin-top: 1px; margin-bottom: 40px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAlCAYAAAAA7LqSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3xpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1NzU4NTFmOC1iODVhLTRlMjUtOGIzMC0xODA4ZTc1YjFiOTciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjVFOUUzQkM0QUEzMTFFNzhGOTNFRDhEOEQyNThCMDMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjVFOUUzQkI0QUEzMTFFNzhGOTNFRDhEOEQyNThCMDMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0RDY4NDM2MDlFNEFFNzExOEQyOUI5MTgyN0E3RkQwQSIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmJmZjI3MjliLThhNWEtMTE3YS05MjEzLWY0NGJiYmZhMzNlMiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PktSkwQAAAKRSURBVHja7Jk7SFxBFIb34ZONUVDyEAUL4/rAShFiYSBFCm3UQgStYmMZsRAstBUUVARTpRBBVgRt8kBMqiCk8lUIIugSlS2MiihKlHjzD5wrwzB33avn3rvIHvhYd2b2zP13zsycPfoNw/C5YG2gCgwmMPYDSAMjtmYQQlygDByC6jvGhUAMvLM7h9+lFRH2HrwFPaAOvJL69sFPWo1rMGDXuZtCasEPEAQhTf8lyAQdIGLbu0uhNWzYs2kQSLbQWgDN9/jcGqinlfJ8Raakb3kFrN+xElHwS3q/nOhcTopolh5oVmr/aiFiA2TSmCGpvd9rITHpYdqk9m4LIZPKcW3aDcjzSkij8pAirMKgEmxZCBH3TAMoAd+Uvl6vNvtn0MTobwuUxxuQxjBJADSAY7Ah3Qk74J80LkecLeA8jq9skA7OaKzp/4juH+GvFBSBdXDCdWoVKaHS7/Ap2K6EYg3XHpnUxHqhQyKywLky13ez/6Gh9VLTlg/GwBtwwxC6fnAIOiks5fQmnWuPqPF+Bf6CMHjGuNmfk6BT+lvOz243Eqf56fWY2e8fWt1AvBPnUVhKSEpISoizQoIafwEpveAyg/wGrZ7/oUKeaIQZDgjx0fH7VGnL4xIyo7wXlZBdUMAsIhdsgimlfZ7rZo/QJSgqHzEq9VzRxJyWQalJL61MBVgC406Xg/Yo1ea0MrDt9ql1xuxP5G8HXhy/E8z+PoILr8pBowaPRZKhQBem39qvQZ+mcPcJtIAupU+0fwFRsJpMJdMqzTfdQ32tmr4Wu3O4laIUW/yS9Ck/lEx7kcq1HLbsOOlNKMHxSSHkt6YtSq+bFheqzbTSnc0uGAGnxKJUsDar9mbfnN3/jQj+CzAATDRDFIkQwAcAAAAASUVORK5CYII=) no-repeat left center; }
+.ios{ background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAoCAYAAAC8cqlMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3xpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1NzU4NTFmOC1iODVhLTRlMjUtOGIzMC0xODA4ZTc1YjFiOTciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjVFOUUzQzA0QUEzMTFFNzhGOTNFRDhEOEQyNThCMDMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjVFOUUzQkY0QUEzMTFFNzhGOTNFRDhEOEQyNThCMDMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0RDY4NDM2MDlFNEFFNzExOEQyOUI5MTgyN0E3RkQwQSIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmJmZjI3MjliLThhNWEtMTE3YS05MjEzLWY0NGJiYmZhMzNlMiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqGLhfkAAAJfSURBVHja1Jk9SBxBFMfvYsCgElRioQdiICIiwhkPgiiBE4wgh1qIVwoaCzVWQsBKbNIZEMVCkyaNtQiiQkTPInBKDjXq+ZFUSiAWp8YvEnD9D0zIMq7eCm/erg9+xe3NsPvbmZ2PN17DMDwujTBoBX9BKFlhrwtFKsEw8MvfP0FeskoPXSbRDkaVa2t2Kj5wkcQrCwkRi3Yqu6VriRd6ALIt/nsGvt+XFmm/QWLcjoSbWmQJBJRrv+VHfnJfRLJlt1J7xwsQvUvfdDr8ynNsgPK7SHAMv5mgSr51LziWD7hvKvMYrIMt8BmMmP5rADUgTQ7DK2DO8k6ia2ngKRgDCeN6/AGTIHhL/Q6wbVjHJuhU6+iQCINzw15MgybgA9WgH8Rt1hUvI/Xffak/9nowwfh9iS7ZCHYpP/YnzBIiSkCQetQac2DE6wMfKOeRYjlscsZ70EM9j3QzS8TMElQtkg52QC6jSCn4Rj2zVzJLRFUJKpEi5m41q2utlcssEtclksEscqZL5JRZJF+XyAGzSECXyCGzSJ0ukR8O7Cjf6Njqis3TNshhlLmQ+/kEdddaZm6VR3I3mUK91ppxYOVbBlZlkoJs9esDew4mMAaoWkQkE+YdFLmk3OrWgmkHJMSxQxblDnFGpnS4Y0isLqiTDy/BAqOEePgscESdaYyAKUaRt0KCctQyh5gYfzEt54up5xF1EdnCIBKiXmtZxScwqFGi2aOcm+g+VhCHml1Jynzx/D8DKQCFScq/Bh+vf/Z6kthm2mQ+98jEV9Ark91q+efgHYgpdSKg4qb7XAkwAHgAbFgJICmVAAAAAElFTkSuQmCC) no-repeat left center; }
+
+
+/*footer*/
+.pcfooter{ display: block; }
+footer{ display: none; padding: 10px 0; width: 100%; text-align: center; font-size: 12px; background: #333; color: #666; font-weight: 300; }
+footer a{ color: #666; }
+footer a:hover{ text-decoration: underline; }
+
+
+
+/*移动端*/
+@media screen and (max-width: 519px) {
+	.mslogin,.mobi_header,.mfooter,.pro_info,.mLogo{ display: block; }
+	.slogin,.swiper-container,.pc_nav,.pc_header,.pcfooter{ display: none; }
+	body{ background-color: #000!important; }
+	
+	/*头部固定定位*/
+	header{ height: 50px; min-height: 50px; background-color: rgba(255,255,255,.96);}
+	.banner{ position: relative; }
+	.banner:before{ content: ''; display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background-color: rgba(0,0,0,.2); z-index: 5; }
+	.content{ margin-top: 48px; }
+	
+	.pro_info{ background: #fff; }
+	.mobi_nav{ display: none; width: 100%; background: #fff;}
+	.mobi_nav li{ position: relative; width: 100%; border-top: 1px solid #f9f9f9;}
+	/*.mobi_nav li:first-child a{ color: #1aad19; }*/
+	.mobi_nav li a{ display:inline-block;*display:inline;*zoom:1; width: 100%; height: 40px; line-height: 40px; text-align: center; font-size: 3.7vw; color: #1aad19; }
+	.mobi_nav_line{ display: none; position: absolute; left: 50%; bottom: 2vw; margin-left: -7vw; width: 14vw; height: 2px; background: #1aad19; }
+	/*.mobi_nav .active{ display: block; }*/
+	.mNavLogo{ margin-top: 7px; padding-left: 10px; width: 95px; height: 34px; }
+	.mNavLogo img{ width: 100%; height: 100%; max-width: 100%; }
+	.mNavIcon{padding: 13px;}
+	.mNavIcon span{  font-size: 18px; /*color: #1aad19;*/ color: #000; font-weight: 800; }
+	/*banner*/
+	.banner .banner_img{ width:100%; max-width: 100%;}
+	/*slogin变换*/
+	.mLogo{ width: 100%; height: 38px; text-align: center; margin-bottom: 5px;  }
+	/*移动端slogin*/
+	.mLogo img{ width: 105px; height: 40px;}
+	.mslogin{ position: absolute; width: 70%; height: 185px; font-weight: 300; left: 42%; top: 50px; margin: 0; z-index: 6;}
+	.msloginFont{ width: 100%; height: 65px; line-height: 26px; font-size: 18px; margin: 0; font-weight: 500; text-shadow: 0 3px 8px rgba(0,0,0,.5); text-align: left;}
+	/*.to_download a{ width: 90px; height: 28px; line-height: 28px; font-size: 13px;}*/
+	.mto_download{ width: 100%; height: 70px; text-align: left; }
+	.mto_download a{ display: inline-block; border-radius: 5px; text-align: center; font-weight: 300; width: 90px; height: 28px; line-height: 28px; font-size: 13px; background: #1aad19; border: none; box-shadow: 0 3px 8px rgba(0,0,0,.2);}
+	/*产品介绍*/
+	
+	.mobi_registration{ width: 100%; }
+	.mobi_registration:nth-child(even){ background: #f9f9f9; }
+	.mobi_registration_img{ width: 100%; height: 87.2vw; padding-top: 20px;}
+	.mobi_registration_img img{ width: 100%; height: 100%; }
+	.mobi_registration_font{ width: 100%; text-align: center; padding-bottom: 40px; }
+	.mobi_registration_title{ width: 100%; height: 6.4vw; line-height: 6.4vw; font-size: 14px; color: #19a318; }
+	.mobi_registration_txt{ width: 100%; height: 9.3vw; line-height: 9.3vw; font-size: 13px; color: #666; }
+	/*下载*/
+	.download{ padding-top: 55px; height: 152px; }
+	.download_con{ padding: 0; width: 75.3vw; height: 130px; }
+	.quickMark{ margin-bottom: 7px; width: 93px; height: 93px; }
+	.downloadFont{ font-size: 12px; line-height: 10px; }
+	.other_down{ width: 130px; }
+	.android, .ios{ width: 115px; height: 32px; font-size: 12px; background-size: 25px 21px; border-width: 0.5px;}
+	.android .androidFont, .ios .iosFont{ width: 77px; height: 32px; line-height: 32px; }
+	.android{ margin-top: 5px; margin-bottom: 17px; }
+	footer{ line-height: 15px; font-size: 10px;}
+}
+@media screen and (min-width: 414px){
+	.mobi_nav li a{ font-size: 16px; }
+}
+@media screen and (min-width: 1400px)  and (max-width: 1500px){
+	.slogin{ top: 280px; }
+}
+@media screen and (min-width: 1500px){
+	.slogin{ top: 350px; }
+}

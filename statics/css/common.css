@@ -1,0 +1,87 @@
+@charset "utf-8";
+/*移动端*/
+/*rem布局基于375的图，rem与px换算公式：量出的尺寸除以20,100%宽为18.75rem */
+.fl{ float: left;}
+.fr{ float: right;}
+/*清浮动*/
+.clearfloat:after{ display:block; content:""; clear:both;}
+.clearfloat{ zoom:1;}/* 清浮动的兼容性写法*/
+
+.box-border{ box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;}
+/*强制一行显示，超出为省略号*/
+.txtElip{ text-overflow:ellipsis; white-space:nowrap; overflow:hidden; }
+
+/*.br-r{ border-right: 0.5px solid #9b9b9b;}*/
+/*.br-t{ border-top: 0.5px solid #e5e5e5;}*/
+/*.br-b { border-bottom: 1px solid #e5e5e5; }*/
+
+.br-t:after{
+	content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #e5e5e5;
+    color: #e5e5e5;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    z-index: 2;
+}
+.br-b:after {     
+	content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #e5e5e5;
+    color: #e5e5e5;
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    z-index: 2;
+}
+.br-r:after{
+	content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    border-right: 1px solid #e5e5e5;
+    color: #e5e5e5;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(.5);
+    transform: scaleX(.5);
+    z-index: 2;
+}
+.br-col-e1:after{ border-color: #ccc;}
+.br-col-9b:after{ border-color: #9b9b9b;}
+/*背景*/
+.bg-white{ background: #fff;}
+.bg-red{ background: #FA5858;}
+.bg-b{ background: #bbb;}
+
+.pl-14{ padding-left: 0.7rem;}
+.pd-12{ padding: 13px 15px;}
+/*文字对齐*/
+.txt-c{ text-align: center;}
+/*文字颜色*/
+.color-white{ color: #fff;}
+.color-6{ color: #666;}
+.color-4a{ color: #4a4a4a;}
+.color-9b{ color: #9b9b9b;}
+/*文字大小*/
+.f-12{ font-size: 0.6rem; font-weight: 400;}
+.f-13{ font-size: 0.65rem; font-weight: 400;}
+.f-14{ font-size: 0.7rem; font-weight: 400;}
+.f-14px{ font-size: 14px; font-weight: 400;}
+.f-16{ font-size: 0.8rem; font-weight: 400;}
+.f-18px{ font-size: 18px; font-weight: 400;}
+.f-20{ font-size: 1rem; font-weight: 400;}
+.f-30{ font-size: 1.5rem; font-weight: 400;}
